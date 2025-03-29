@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AppDashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="/">AppDashboard</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section with Centered Sensor Boxes -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="data-container">
+        <div class="data-box greenhouse">
+          <h2>Greenhouse</h2>
+          <ul>
+            <li><span class="label">Humidity:</span><span class="value humidity">55%</span></li>
+            <li><span class="label">Temperature:</span><span class="value temperature">72°F</span></li>
+            <li><span class="label">O₂:</span><span class="value o2">21%</span></li>
+            <li><span class="label">PPFD:</span><span class="value ppfd">150 μmol/m²/s</span></li>
+          </ul>
+        </div>
+        <div class="data-box pirigation">
+          <h2>PiRigation</h2>
+          <ul>
+            <li><span class="label">Last Runtime:</span><span class="value">2025-03-28 07:30 AM</span></li>
+            <li><span class="label">Next Runtime:</span><span class="value">2025-03-28 07:30 PM</span></li>
+          </ul>
+        </div>
+        <div class="data-box weather">
+          <h2>Current Weather</h2>
+          <ul>
+            <li><span class="label">Wind Speed:</span><span class="value wind">5 mph</span></li>
+            <li><span class="label">Temperature:</span><span class="value weather-temp">68°F</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <a href="/greenhouse-manager" class="feature">
+        <img src={~p"/images/green-leaf.jpg"} alt="Greenhouse Manager" class="feature-img" />
+        <h2>Greenhouse Manager</h2>
+        <p>Manage greenhouse settings.</p>
+      </a>
+      <a href="/pirigation" class="feature">
+        <img src={~p"/images/water-droplet.jpg"} alt="PiRigation" class="feature-img" />
+        <h2>PiRigation</h2>
+        <p>Manage pirigation settings.</p>
+      </a>
+      <a href="/placeholder" class="feature">
+      <img src={~p"/images/settings.svg"} alt="Settings" class="feature-img" />
+        <h2>Configurations</h2>
+        <p>Dashboard root configurations.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Charles Made. All rights reserved.</p>
+  </footer>
+</body>
+</html>

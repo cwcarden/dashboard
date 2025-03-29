@@ -1,0 +1,212 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* This file is for your main application CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Nunito', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #fdfbfb);
+    color: #333;
+    padding-top: 60px; /* space for navbar */
+  }
+  
+  
+  /* Navbar */
+  .navbar {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo a {
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    transition: background 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    background: #eaeaea;
+    border-radius: 5px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #fdfdff, #f2f4fc, #edeafc);
+    min-height: 400px; /* ← more reliable on mobile than vh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+  
+  .data-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    z-index: 2;
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+  }
+  
+  /* Data Boxes */
+  .data-box {
+    background: linear-gradient(135deg, #ffffff, #f7f9fb);
+    border-radius: 20px;
+    padding: 20px;
+    width: 260px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    color: #333;
+    border: 2px solid transparent;
+  }
+  
+  .data-box.greenhouse { border-color: #66bb6a; }
+  .data-box.pirigation { border-color: #42a5f5; }
+  .data-box.weather    { border-color: #ffca28; }
+  
+  .data-box h2 {
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+  }
+  
+  .data-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .data-box li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 0.95em;
+  }
+  
+  .label {
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .value {
+    font-weight: 700;
+    text-align: right;
+  }
+  
+  .value.humidity     { color: #2196f3; }
+  .value.temperature  { color: #ff7043; }
+  .value.o2           { color: #43a047; }
+  .value.ppfd         { color: #8e24aa; }
+  .value.wind         { color: #546e7a; }
+  .value.weather-temp { color: #ffb300; }
+  
+  /* Features */
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 20px;
+    gap: 20px;
+    background: linear-gradient(135deg, #fdfdff, #f2f4fc, #e9ebf7);
+  }
+  
+  .feature {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .feature h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .data-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .data-box {
+      width: 90%;
+    }
+  
+    .feature {
+      width: 100%;
+      max-width: 340px;
+    }
+  }
+  

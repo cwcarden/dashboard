@@ -6,6 +6,8 @@
   <title>AppDashboard</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css" />
+  <!-- Include the LiveView JavaScript -->
+  <script defer type="text/javascript" src="/assets/app.js"></script>
 </head>
 <body>
   <header>
@@ -21,35 +23,19 @@
 
   <main>
     <!-- Hero Section with Centered Sensor Boxes -->
-    <section class="hero">
-      <div class="hero-overlay"></div>
-
-      <div class="data-container">
-        <div class="data-box greenhouse">
-          <h2>Greenhouse</h2>
-          <ul>
-            <li><span class="label">Humidity:</span><span class="value humidity">55%</span></li>
-            <li><span class="label">Temperature:</span><span class="value temperature">72°F</span></li>
-            <li><span class="label">O₂:</span><span class="value o2">21%</span></li>
-            <li><span class="label">PPFD:</span><span class="value ppfd">150 μmol/m²/s</span></li>
-          </ul>
-        </div>
-        <div class="data-box pirigation">
-          <h2>PiRigation</h2>
-          <ul>
-            <li><span class="label">Last Runtime:</span><span class="value">2025-03-28 07:30 AM</span></li>
-            <li><span class="label">Next Runtime:</span><span class="value">2025-03-28 07:30 PM</span></li>
-          </ul>
-        </div>
-        <div class="data-box weather">
-          <h2>Current Weather</h2>
-          <ul>
-            <li><span class="label">Wind Speed:</span><span class="value wind">5 mph</span></li>
-            <li><span class="label">Temperature:</span><span class="value weather-temp">68°F</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+   <section class="hero">
+   <div class="data-container">
+  <div class="data-box-wrapper">
+    <%= live_render(@conn, DashboardWeb.GreenhouseLive, id: :greenhouse, layout: {DashboardWeb.Live.Layouts.Embedded, :embedded}) %>
+  </div>
+  <div class="data-box-wrapper">
+    <%= live_render(@conn, DashboardWeb.PirigationLive, id: :pirigation, layout: {DashboardWeb.Live.Layouts.Embedded, :embedded}) %>
+  </div>
+  <div class="data-box-wrapper">
+    <%= live_render(@conn, DashboardWeb.WeatherLive, id: :weather, layout: {DashboardWeb.Live.Layouts.Embedded, :embedded}) %>
+  </div>
+</div>
+</section>
 
     <!-- Features Section -->
     <section class="features">
@@ -64,7 +50,7 @@
         <p>Manage pirigation settings.</p>
       </a>
       <a href="/placeholder" class="feature">
-      <img src={~p"/images/settings.svg"} alt="Settings" class="feature-img" />
+        <img src={~p"/images/settings.svg"} alt="Settings" class="feature-img" />
         <h2>Configurations</h2>
         <p>Dashboard root configurations.</p>
       </a>
